@@ -1,13 +1,13 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/widgets/ticket_view.dart';
-import 'package:ticket_app/screens/widgets/Hotel.dart';
+import 'package:ticket_app/screens/home/widgets/Hotel.dart';
 
-import '../base/res/media.dart';
-import '../base/res/styles/app_styles.dart';
-import '../app_routes.dart';
-import '../base/utils/all_json.dart';
-import '../base/widgets/app_double_text.dart';
+import '../../base/res/media.dart';
+import '../../base/res/styles/app_styles.dart';
+import '../../app_routes.dart';
+import '../../base/utils/all_json.dart';
+import '../../base/widgets/app_double_text.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -26,6 +26,7 @@ class HomeScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -77,13 +78,14 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: tickets
-                          .take(2)
-                          .map((ticket) => TicketView(ticket: ticket))
-                          .toList(),
-                    )),
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: tickets
+                        .take(2)
+                        .map((ticket) => TicketView(ticket: ticket))
+                        .toList(),
+                  )
+                ),
                 const SizedBox(height: 40),
                 AppDoubleText(
                   bigText: "Hotels",
@@ -91,7 +93,16 @@ class HomeScreen extends StatelessWidget {
                   func: () =>
                       Navigator.pushNamed(context, AppRoutes.allTickets),
                 ),
-                Hotel(),
+                const SizedBox(height: 20),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: hotels
+                        .take(3)
+                        .map((hotel) => Hotel(hotel: hotel))
+                        .toList(),
+                  )
+                ),
               ],
             ),
           ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ticket_app/app_routes.dart';
 import 'package:ticket_app/base/widgets/ticket_view.dart';
 
-import '../base/utils/all_json.dart';
+import '../../base/utils/all_json.dart';
 
 class AllTickets extends StatelessWidget {
   const AllTickets({super.key});
@@ -22,7 +22,7 @@ class AllTickets extends StatelessWidget {
                         onTap: () {
                           var index = tickets.indexOf(ticket);
                           print("I am tapped $index");
-                          Navigator.pushNamed(context, AppRoutes.ticketScreen,
+                          Navigator.pushNamed(context, AppRoutes.allHotels,
                               arguments: {"index": index});
                         },
                         child: Container(

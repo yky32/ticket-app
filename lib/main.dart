@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/app_routes.dart';
-import 'package:ticket_app/screens/all_tickets.dart';
+import 'package:ticket_app/screens/home/all_hotels.dart';
+import 'package:ticket_app/screens/home/all_tickets.dart';
 import 'package:ticket_app/screens/ticket/ticket_screen.dart';
 
 import 'base/bottom_nav_bar.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.homePage: (context) => const BottomNavBar(),
         AppRoutes.allTickets : (context) => const AllTickets(),
         AppRoutes.ticketScreen : (context) => const TicketScreen(),
+        AppRoutes.allHotels : (context) => const AllHotels(),
       },
     );
   }

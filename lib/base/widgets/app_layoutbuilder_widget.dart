@@ -14,7 +14,7 @@ class AppLayoutBuilderWidget extends StatelessWidget {
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
       var length = (constraints.constrainWidth() / randomDivider).floor();
-      print("$length");
+      //print("$length");
       return Flex(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           direction: Axis.horizontal,

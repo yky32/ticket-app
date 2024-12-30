@@ -13,7 +13,6 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppStyles.bgColor,
       body: ListView(
@@ -29,7 +28,10 @@ class SearchScreen extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          const AppTicketTabs(),
+          const AppTicketTabs(
+              firstTab: "All Tickets",
+              secondTab: "Hotels"
+          ),
           const SizedBox(
             height: 25,
           ),
